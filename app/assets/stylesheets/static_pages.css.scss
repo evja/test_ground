@@ -1,0 +1,54 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.page-title {
+  text-align: center;
+  padding-top: -20px;
+}
+
+#sign_up_button {
+  position: fixed;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  clear: all;
+}
+
+.container h1 {
+  margin-top: -50px;
+}
+
+#rank {
+  margin-left: 20px;
+}
+
+.show-email {
+  position: relative;
+  left: 200px;
+  bottom: 20px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.notice {
+  text-align: center;
+  background-color: cyan;
+}
+
+.alert {
+  text-align: center;
+}
+
+.ppage {
+  background-color: black;
+}
+
+.perg-window {
+  border-radius: 10px;
+}
+
+.white-text {
+  color: white;
+}

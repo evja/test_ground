@@ -1,0 +1,28 @@
+ $navbar-height: 80px;
+ $navbar-padding: 30px;
+ $navbar-border-radius: 0px 0px 20% 20%;
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ .btn-1 {
+   border: solid 3px white;
+   border-top-left-radius: 0;
+   border-bottom-left-radius: 20px;
+   border-top-right-radius: 20px;
+ }
+
+.pull-right {
+  margin: 7px 2px;
+  box-shadow: black 0px 0px 10px 1px;
+}
+
+.pull-left {
+  margin: 7px 5px;
+  box-shadow: black 0px 0px 10px 1px;
+}
+
+.btn-index-back {
+  margin: 9px;
+}
+

@@ -1,0 +1,9 @@
+<div class="form"><%= bootstrap_form_for [@link, @comment] do |f| %>
+
+  <%= f.text_field :author, :value => "#{current_user.username}" %>
+
+  <%= f.text_field :body, control_col: "col-sm-3" %>
+
+  <%= f.submit %>
+
+<% end %></div>

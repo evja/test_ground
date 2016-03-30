@@ -1,0 +1,27 @@
+<h1>Comments</h1>
+
+<div class="show_link">
+  <h2><%= @link.title %></h2>Posted By: <%= @link.user.email %>
+  <h4><%= @link.url %> ---Total Votes : <%= @link.votes %> ---Total Comments : <%= @link.comments.count %></h4>
+</div>
+
+<%= link_to 'Add Comment', new_link_comment_path(@link), class: "btn btn-default btn-xs" %>
+<%= link_to 'Back', root_path, class: "btn btn-info btn-xs" %>
+
+<% if @link.comments.any? %>
+  <% @link.comments.each do |comment| %>
+    <div class="comment">
+      <h5> By: <%= comment.author %></h5>
+      <h4><%= comment.body %></h4>
+    </div>
+  <% end %>
+
+<% else %>
+  <h2 style="text-align: center;">There are no comments for this link</h2>
+<% end %>
+
+<%= link_to 'Add Comment', new_link_comment_path(@link), class: "btn btn-default btn-xs" %>
+<%= link_to 'Back', root_path, class: "btn btn-info btn-xs" %>
+<br/>
+<br/>
+

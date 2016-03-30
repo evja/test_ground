@@ -1,0 +1,33 @@
+<h1 class="page-title">The Missing Link</h1>
+
+<% unless current_user %>
+  <div class="span7 text-center">
+    <%= link_to 'Sign Up', new_user_registration_path, :style => "background-color: grey;",  class: "btn btn-info" %>
+  </div>
+<% else %>
+  <div class="span7 text-center">
+    <%= link_to 'My Links', user_links_path(current_user), class: "btn btn-warning" %>
+  </div>
+<% end  %>
+
+
+<% @links = Link.all.paginate(:page => params[:page], :per_page => 15) %>
+
+<h5 id="rank">Rank</h5>
+
+  <% @links.each do |link| %>
+        <% path = link.url %>
+        <div class="index">
+          <span class="badge pull-left votes"><%= link.votes %></span>
+          <p>
+           <span class="title"><%= link.title %></span>
+           <%= link_to "#{link.url}", link.url, :style => "color: red;", :target => "_blank" %>
+           <%= link_to '☝︎', upvote_path(link), method: :put, class: "btn btn-success btn-xs pull-left btn-like" %>
+           <%= link_to '☟', downvote_path(link), method: :patch, class: "btn btn-danger btn-xs pull-left btn-dislinke" %>
+           <span class="pull-left" style="color: red; box-shadow: none;"><%= link.user.username %></span>
+           <%= link_to "#{link.comments.count} " + "comments", link_comments_path(link), class: "btn btn-default btn-xs pull-right btn-dislinke" %>
+          </p>
+      </div>
+  <% end %>
+
+<%= will_paginate @links %>
